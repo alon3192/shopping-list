@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="products">
+            <app-manage></app-manage>
+        <div class="display_products" *ngFor="let product of products">
+
+            <div class="display_product">
+
+            <h4 class="cell"  [ngClass]="{editMode: editMode && product===productToEdit}">{{ product.category }}</h4>
+            <p class="cell"  [ngClass]="{editMode: editMode && product===productToEdit}">{{ product.name }}</p>
+            <p class="cell"  [ngClass]="{editMode: editMode && product===productToEdit}">{{ product.amount }}</p>
+            <button class="cell" id="edit" (click)="editProduct(product)">Edit</button>
+            <button class="cell" id="delete" (click)="deleteProduct(product)">Delete</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="div1">
+        <div class="display_edit" *ngIf="editMode">
+        <app-edit-product ></app-edit-product>  
+        </div>
+    </div>
+    
+    
+</div>

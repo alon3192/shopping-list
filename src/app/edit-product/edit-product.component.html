@@ -1,0 +1,21 @@
+<div class="display_edit">
+    <div class="cell">
+        <h5>Category</h5>
+        <input type="text" id="category" [(ngModel)]="categoryEdit">
+    </div>
+
+    <div class="cell">
+        <h5>Name</h5>
+        <input type="text" id="name"  [(ngModel)]="nameEdit">
+    </div>
+
+    <div class="cell">
+        <h5>Amount</h5>
+        <input type="number" id="amount"  [(ngModel)]="amountEdit">
+    </div>
+
+    <div class="cell">
+            <button (click)="editAgreed()">Agree</button>
+            <p id="incorrect" *ngIf="incorrectInput">One or more of your input is incorrect</p>
+    </div>
+</div>

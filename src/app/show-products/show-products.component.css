@@ -1,0 +1,155 @@
+
+
+* {
+    font-family: 'Hind', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   align-items: center;
+   justify-content: center;
+   grid-column-gap: 20px;
+   background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg");
+   min-height: 400px;
+ }
+
+ .products {
+    min-height: 400px;
+    background: rgba(234, 252, 237, 0.85);
+    padding: 5px;
+ }
+.display_products {
+    width: 100%;
+    margin: 0;
+}
+
+.display_product {
+    display: grid;
+    grid-template-columns: 13rem 13rem 5rem 4rem 5rem;
+    align-items: center;
+    grid-column-gap: 1rem;
+    padding-left: 7px; 
+    width: 100%;
+}
+
+.cell {
+    
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+p:hover,
+h4:hover {
+    animation: on_cell 800ms 0s 1 ;
+}
+
+#edit {
+    color: white;
+    background: green;
+    padding: 10px;
+    border-radius: 18%;
+    cursor: pointer;
+    border: 1px black solid;
+}
+
+#edit:hover {
+    color: green;
+    background: white;
+    font-weight: bold;
+}
+
+
+#delete {
+    color: white;
+    background: rgba(240, 64, 72, 0.8);
+    padding: 10px;
+    border-radius: 18%;
+    cursor: pointer;
+    border: 1px black solid;
+}
+
+#delete:hover {
+    color: rgba(240, 64, 72, 0.8);
+    background: white;
+    font-weight: bold;
+}
+
+.editMode {
+    background: rgba(247, 151, 156, 0.8);
+    border: 1px solid white;
+    color: white;
+    animation: paint_edit 3s 0s 1 ease-out forwards;
+}
+
+.div1 {
+    width: 100%;
+    margin: 0;
+    filter: invert(5px);
+    height: 100%;
+    /*filter: contrast(1.75);*/
+    background: rgba(192, 210, 228, 0.85);
+    position: relative;
+}
+
+.display_edit {
+   /*padding-left: 5%; */
+   position: -webkit-sticky;
+   position: sticky;
+   z-index: 1;
+   background: rgba(192, 210, 228, 0.85);
+   padding: 20px;
+   width: 80%;
+   top: 20%;
+   border: 2px black solid;
+   animation: edit_show 2s 0s 1 ease-out forwards;
+   box-sizing: border-box;
+   margin-left: 10%;
+   margin-top: 40%;
+}
+
+
+
+
+
+@keyframes on_cell {
+    0% {
+      transform: rotateZ(0);
+    }
+    33% {
+      transform: rotateZ(15deg);
+    }
+    66% {
+      transform: rotateZ(-15deg);
+      color: navy;
+        font-weight: bold;
+    }
+    100% {
+        transform: rotateZ(0);
+        color: navy;
+        font-weight: bold;
+      }
+  }
+
+  @keyframes paint_edit {
+    from {
+      background: white;
+    }
+    
+    to {
+        background: rgba(247, 151, 156, 0.8);
+      }
+  }
+
+  @keyframes edit_show {
+    from {
+        margin-left: 100%;
+     
+    }
+    
+    to {
+        
+      }
+  }
+ 

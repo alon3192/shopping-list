@@ -1,0 +1,107 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    
+}
+
+
+
+.cell {
+    align-items: center;
+    text-align: center;  
+   
+}
+
+input {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h5 {
+    text-align: center;
+    margin: 0.3rem;
+}
+h5:hover {
+    animation: colorChanging 1s 0s 1 ;
+}
+
+button {
+    background: rgba(218, 242, 199, 0.8);
+    width: 100%;
+    padding: 5px;
+    color: blue;
+    border: 1px black solid;
+    animation: wiggle 10s 3s 8;
+    animation-iteration-count: infinite;
+    margin-top: 13px;
+}
+
+button:hover {
+    background: blue;
+    color: white;
+}
+
+#incorrect {
+    color: red;
+    margin: 5px;
+}
+
+@keyframes wiggle {
+    0% {
+      transform: rotateZ(0);
+    }
+    
+    2% {
+      transform: rotateZ(-13deg);
+    }
+    4% {
+        transform: rotateZ(13deg);
+      }
+    6% {
+        transform: rotateZ(-13deg);
+      }
+    8% {
+        transform: rotateZ(13deg);
+      }
+    10% {
+        transform: rotateZ(-13deg);
+      }
+    12% {
+        transform: rotateZ(13deg);
+      }
+    14% {
+        transform: rotateZ(-13deg);
+      }
+    16% {
+        transform: rotateZ(13deg);
+      }
+    18% {
+        transform: rotateZ(-13deg);
+      }
+    20% {
+        transform: rotateZ(13deg);
+      }
+    22% {
+        transform: rotateZ(0);
+      }
+    100% {
+      transform: rotateZ(0);
+    }
+  }
+
+  @keyframes colorChanging {
+      0% {
+          color: black;
+          font-size: 1rem;
+      }
+      50% {
+          color: blueviolet;
+          font-size: 1.5rem;
+      }
+      
+      100% {
+          color: black;
+          font-size: 1rem;
+      }
+  }

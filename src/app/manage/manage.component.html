@@ -1,0 +1,17 @@
+<div class="container">
+        <button (click)="viewOptionlaToAdd()">Add Product</button>
+        <button (click)="viewOptionlaToSearch()">Search Product</button>
+</div> 
+
+<div class="add_product" *ngIf="addMode">
+    <input type="text" placeholder="Product Category" [(ngModel)]="categoryToAdd">
+    <input type="text" placeholder="Product Name" [(ngModel)]="nameToAdd">
+    <input type="number" placeholder="Amount" [(ngModel)]="amountToAdd">
+    <button (click)="onAddProduct()">Agree</button>
+</div>
+<p id="incorrect" *ngIf="incorrectInput">One or more of your input is incorrect</p>
+   
+<div class="search_product" *ngIf="searchMode">
+    <input type="text" placeholder="Search By Category" [(ngModel)]="categorySearch" (input)="toSearch()">
+    <input type="text" placeholder="Search By Name" [(ngModel)]="nameSearch" (input)="toSearch()">
+</div>

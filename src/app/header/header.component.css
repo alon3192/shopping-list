@@ -1,0 +1,87 @@
+* {
+    font-family: 'Oxygen', sans-serif;
+}
+
+
+.header {
+    width: 100%;
+    height: 60px;
+    background:rgba(2, 180, 255, 0.8);
+    position: relative;
+}
+
+.head_line {
+    justify-content: center;
+    display: flex;
+}
+
+
+.header .buttons {
+    position: absolute;
+    top: 20%;
+    padding: 5px;
+    list-style: none;
+    display: flex;
+    right: 50px;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header .buttons li {
+    margin-left: 35px;
+}
+
+.header .buttons li:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.header .communications {
+    position: absolute;
+    display: flex;
+    list-style: none;
+    top: 25%;
+    left: 160px;
+    margin: 0;
+    
+}
+
+.header .communications li img {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header .communications li img:hover {
+    background: white;
+}
+
+
+#logo {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#logo img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.image_view {
+    background-image: url("http://www.xhangolli.com/wp-content/uploads/shopping-supermarket-1.jpg");
+    width: 100%;
+    height: 230px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 45%; 
+    border: 3px dashed rgba(2, 180, 255, 0.8);;
+    background-origin: border-box;
+    box-sizing: border-box;
+}

@@ -1,0 +1,75 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-column-gap: 3rem;
+    padding: 10px;  
+}
+
+.container button {
+    background: rgba(218, 242, 199, 0.8);
+    width: 8rem;
+    padding: 5px;
+    color: blue;
+    border: 1px black solid;
+}
+
+.container button:hover {
+    background: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.add_product {
+    display: grid;
+    grid-template-columns: 13rem 13rem 5rem 10rem;
+    grid-column-gap: 1rem;
+    padding-top: 10px;
+    padding-left: 7px;
+
+}
+
+.add_product input {
+    padding: 5px;
+}
+
+.add_product button {
+    padding: 5px;
+    background: rgba(211, 240, 125, 0.8);
+    color: blue;
+    border: 1px black solid;
+    font-weight: bold;
+}
+
+.add_product button:hover {
+    background: blue;
+    color: white
+}
+
+#incorrect {
+    color: red;
+    margin: 5px;
+    text-align: center;
+    width: 50%;
+}
+
+.search_product {
+    display: grid;
+    grid-template-columns: 13rem 13rem;
+    grid-column-gap: 1rem;
+    padding-top: 10px;
+    padding-left: 7px;
+}
+
+.search_product input {
+    padding: 5px;
+}
+
+
+
