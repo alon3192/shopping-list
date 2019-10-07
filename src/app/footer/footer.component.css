@@ -17,3 +17,27 @@
     font-family: 'Quicksand', sans-serif;
     padding: 10px;
 }
+.footer p:hover,
+.footer a:hover {
+    color: navy;
+}
+
+@media(max-width : 54rem) {
+    
+    .footer {
+        height: 115px;
+        z-index: 1;
+    }
+    
+    .p_footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer p,
+    .footer a {
+        margin: 0;
+    }
+    
+}

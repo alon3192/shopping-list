@@ -19,6 +19,12 @@
     
 }
 
+@media(max-width : 54rem) {
+  .cart {
+    animation: driving2 13s 0s;
+    animation-iteration-count: infinite;
+  }
+}
 
 @keyframes driving {
     0% {
@@ -40,3 +46,25 @@
         background-image: url("../../assets/images/cart_logo_reverse.png");
      }
   }
+
+
+  @keyframes driving2 {
+  0% {
+      right: 0; 
+      background-image: url("../../assets/images/cart_logo_reverse.png");
+  }
+  49% {
+      right: 90%;
+      background-image: url("../../assets/images/cart_logo_reverse.png");
+    }
+    50% {
+      background-image: url("../../assets/images/cart_logo.png");
+    }
+    99% {
+      background-image: url("../../assets/images/cart_logo.png");
+    }
+   100% {
+      right: 0;
+      background-image: url("../../assets/images/cart_logo_reverse.png");
+   }
+}

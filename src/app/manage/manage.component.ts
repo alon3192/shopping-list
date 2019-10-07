@@ -28,13 +28,14 @@ export class ManageComponent implements OnInit {
 
   viewOptionlaToAdd()
   {
-    this.addMode = true;
+    this.addMode = !this.addMode;
     this.searchMode = false;
   }
   viewOptionlaToSearch()
   {
-    this.searchMode = true;
+    this.searchMode = !this.searchMode;
     this.addMode = false;
+    this.incorrectInput = false;
   }
 
   onAddProduct()
@@ -54,7 +55,7 @@ export class ManageComponent implements OnInit {
 
   toSearch()
   {
-    this.dataService.searchProduct(this.categorySearch, this.nameSearch)
+    this.dataService.searchProduct(this.categorySearch, this.nameSearch);
   }
 
 }

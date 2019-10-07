@@ -1,4 +1,30 @@
+<!--[ngClass]="{disabled_screen:sidebarMode}"-->
+<div [ngClass]="getDisabledClass()" (click)=closeSidebar()></div>
+<div>
+    <div *ngIf="touched" class="sidebar_open" [ngClass]="{disappear_animation:!sidebarMode}">
+        <div class="arrow_div" (click)="closeSidebar()">
+            <img src="../../assets/images/left-arrow.png" alt="arrow">
+        </div>
+        <ol class="buttons"> 
+            <li>About</li>
+            <li>Contact</li>
+        </ol>
+        <ol class="communications">
+            <li><img src="../../assets/images/facebook.png" alt=""></li>
+            <li><img src="../../assets/images/instagram.png" alt=""></li>
+            <li><img src="../../assets/images/twitter.png" alt=""></li>       
+        </ol>
+    </div>      
+</div>
+
+
+
+
 <div class="header">
+    <div id="sidebar" (click)="openSidebar()">
+        <img src="../../assets/images/sidebar-icon.jpg" alt="">
+    </div>
+    <div class="open_line">
         <div class="head_line">
            <h3>Shopping Website</h3> 
         </div>
@@ -11,11 +37,11 @@
            <img src="../../assets/images/512x512bb.jpg" alt="">
        </div>
        <ol class="communications">
-           <li>
-               <img src="../../assets/images/facebook.png" alt="">
-               <img src="../../assets/images/instagram.png" alt="">
-               <img src="../../assets/images/twitter.png" alt="">
-           </li>
+            <li><img src="../../assets/images/facebook.png" alt=""></li>
+            <li><img src="../../assets/images/instagram.png" alt=""></li>
+            <li><img src="../../assets/images/twitter.png" alt=""></li>
+           
        </ol>
+    </div>
 </div>
 <div class="image_view"></div>
