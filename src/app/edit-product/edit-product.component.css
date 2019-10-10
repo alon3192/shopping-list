@@ -43,8 +43,9 @@ button:hover {
 }
 
 #incorrect {
+    animation: bounceInUp 1s 0s 1 ease-out;
     color: red;
-    margin: 5px;
+    
 }
 
 @keyframes wiggle {
@@ -105,3 +106,19 @@ button:hover {
           font-size: 1rem;
       }
   }
+
+  @keyframes bounceInUp {
+    0% {
+      
+      position: fixed;
+      top: -1900px;
+  }
+  70% {
+    top: 100px;
+    position: relative;
+  }
+  100% {
+    position: relative;
+    top: 0;
+  }
+}

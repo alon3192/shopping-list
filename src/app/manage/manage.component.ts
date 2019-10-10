@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Product } from '../product.model';
 import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-manage',
@@ -9,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class ManageComponent implements OnInit {
 
-  constructor(public dataService:DataService) { }
+  constructor(public dataService:DataService, private cd: ChangeDetectorRef) { }
   addMode = false;
   searchMode = false;
   
@@ -22,12 +23,17 @@ export class ManageComponent implements OnInit {
   categorySearch;
   nameSearch;
 
+  agreePushed = false;
+
 
   ngOnInit() {
+    if(this.incorrectInput) { this.addMode = false; }
+    
   }
 
   viewOptionlaToAdd()
   {
+    this.agreePushed = false;
     this.addMode = !this.addMode;
     this.searchMode = false;
   }
@@ -49,6 +55,7 @@ export class ManageComponent implements OnInit {
       var newProduct:Product = new Product(this.categoryToAdd, this.nameToAdd, this.amountToAdd);
       this.dataService.addProduct(newProduct);
       this.incorrectInput = false;
+      this.agreePushed = true;
     }
     
   }
@@ -57,5 +64,23 @@ export class ManageComponent implements OnInit {
   {
     this.dataService.searchProduct(this.categorySearch, this.nameSearch);
   }
+
+  disapperaMode()
+  {
+    if(this.agreePushed)
+    {
+      setTimeout(() => {
+        this.addMode = false;
+        this.categoryToAdd = '';
+        this.nameToAdd = '';
+        this.amountToAdd = '';
+    },1000);
+
+      return "add_product_disappear_animation";
+    }
+  }
+
+  
+
 
 }

@@ -27,7 +27,7 @@
     padding: 5px;
     list-style: none;
     display: flex;
-    right: 50px;
+    right: 30px;
     font-size: 1.2rem;
     margin: 0;
     font-weight: bold;
@@ -157,13 +157,15 @@
 
     .sidebar_open {
         position: fixed;
-        height: 100%;
+        height: auto;
+        min-height: 100%;
         background: rgba(2, 180, 255);
         width: 160px;
         z-index: 6;
         left: 0;
         top: 0;
         animation: sidebar_appear 1s 0s 1 ease-out ;
+        overflow: scroll;
     }
     .sidebar_open .buttons {
         list-style: none;
@@ -172,26 +174,41 @@
         font-weight: bold;
         cursor: pointer;
         font-size: 1.2rem;
+        margin-left: 10px;
     }
 
     .sidebar_open .buttons li {
-        margin-top: 15px;
+        margin-bottom: 25px;
+        position: relative;
+    }
+    .sidebar_open .buttons li span {
+        left: 10px;
+        position: absolute;
     }
 
     .sidebar_open .buttons li:hover {
         text-decoration: underline;
         color: white;
     }
+    #home {
+        list-style-image: url("../../assets/images/home.png");
+        
+    }
+    #contact {
+        list-style-image: url("../../assets/images/contact.png");
+    }
+    #about {
+        list-style-image: url("../../assets/images/about.png");
+    }
 
     .sidebar_open .communications {
         position: absolute;
         list-style: none;
-        top: 40%;
+        top: 50%;
         margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 200px;
     }
     .sidebar_open .communications li {
         margin-top: 20px; 
@@ -221,6 +238,12 @@
 
     .disappear_animation {
         animation: sidebar_disappear 1s 0s 1 ease-out forwards;
+    }
+
+    @media(max-width : 54rem) and (orientation: landscape) {
+        .sidebar_open .communications {
+            top: 80%;
+        }
     }
 
     @keyframes sidebar_appear {
