@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Product } from '../product.model';
 import { DataService } from '../data.service';
+import { DataStorageService } from '../data-storage.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { DataService } from '../data.service';
 })
 export class ManageComponent implements OnInit {
 
-  constructor(public dataService:DataService, private cd: ChangeDetectorRef) { }
+  constructor(public dataService:DataService, private cd: ChangeDetectorRef, private dataStorageService:DataStorageService) { }
   addMode = false;
   searchMode = false;
   
@@ -28,7 +29,6 @@ export class ManageComponent implements OnInit {
 
   ngOnInit() {
     if(this.incorrectInput) { this.addMode = false; }
-    
   }
 
   viewOptionlaToAdd()
@@ -56,6 +56,7 @@ export class ManageComponent implements OnInit {
       this.dataService.addProduct(newProduct);
       this.incorrectInput = false;
       this.agreePushed = true;
+      this.dataStorageService.storageProducts();
     }
     
   }

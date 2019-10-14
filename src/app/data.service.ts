@@ -2,18 +2,26 @@ import { Injectable } from '@angular/core';
 import { Product } from './product.model';
 import { Subject } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService{
 
   constructor() { 
+    
     this.orderArray();
+     
   }
+
+  
+
   productsChanged = new Subject<Product[]>();
   s="s"
 
-  private products:Product[] = [
+  
+  private basicList:Product[] = [
     new Product ("Beverages", "Cola", 1),
     new Product ("Milky", "Cheese", 2),
     new Product ("Milky", "Milk", 3),
@@ -22,11 +30,12 @@ export class DataService {
     new Product ("Snacks", "Chocolate", 2)
   ];
   
+ private products:Product[] = [];
+  
+  
   editProduct:Product;
   editProductChanged = new Subject<Product>();
   editModeChanged = new Subject<boolean>();
-  
-
   
 
   getProducts()
@@ -78,8 +87,15 @@ export class DataService {
       } else if(a.category < b.category) {
         return -1;
       } else {
-        return 0;
+        /*return 0;*/
+        if(a.name > b.name) {
+          return 1;
+        }
+        else if(a.name < b.name) {
+          return -1;
+        }
       }
+      return 0;
     });
   }
 
@@ -136,6 +152,12 @@ export class DataService {
     this.productsChanged.next(copy);
     this.editModeChanged.next(false);
 
+  }
+  setBasicList()
+  {
+    this.products = this.basicList.slice();
+    this.orderArray();
+    this.productsChanged.next(this.products.slice())
   }
 }
 

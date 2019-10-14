@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { BorderComponent } from './border/border.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -27,7 +29,8 @@ import { BorderComponent } from './border/border.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Product } from '../product.model';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from '../data-storage.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class ShowProductsComponent implements OnInit {
   editMode: boolean = false;
   productToEdit:Product
 
-  constructor(public dataService:DataService) { }
+  constructor(public dataService:DataService, private dataStorageService:DataStorageService) { }
 
   ngOnInit() {
     
@@ -48,6 +49,7 @@ export class ShowProductsComponent implements OnInit {
   {
     this.dataService.deleteProduct(product);
     this.editMode = false;
+    this.dataStorageService.storageProducts();
   }
 
   ngOnDestroy()

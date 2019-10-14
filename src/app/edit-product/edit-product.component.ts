@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { DataService } from '../data.service';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from '../data-storage.service';
 
 @Component({
   selector: 'app-edit-product',
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor(public dataService:DataService) { }
+  constructor(public dataService:DataService, private DataStorageService:DataStorageService) { }
   editProduct:Product;
   subscription:Subscription;
 
@@ -50,6 +51,7 @@ export class EditProductComponent implements OnInit {
       this.incorrectInput = false;
       var toEdit = new Product(this.categoryEdit, this.nameEdit, this.amountEdit);
       this.dataService.updateProduct(this.editProduct, toEdit);
+      this.DataStorageService.storageProducts();
     }
    
   }
