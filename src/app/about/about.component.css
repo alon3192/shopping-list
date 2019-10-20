@@ -1,13 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+
 .background{
     background: #999;
-    min-height: 320px;
+    min-height: 400px;
     padding: 5px;
     font-family: 'Bree Serif', serif;
     color: white;
-    bottom: 0;
+    font-size: 1rem;
+    align-items: center;
+    display: grid;
+    grid-auto-rows: 15% 70%;
+    box-sizing: border-box;
 }
 #head_line {
     text-align: center;
     color: black;
+    margin: 0;
+}
+.explanation {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+p {
+    margin: 0.5rem;
+}
+
+@media(max-width : 54rem) {
+
+    .background {
+        display: block;
+    }
 }
 
