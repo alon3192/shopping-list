@@ -1,0 +1,13 @@
+.background{
+    background: #999;
+    min-height: 320px;
+    padding: 5px;
+    font-family: 'Bree Serif', serif;
+    color: white;
+    bottom: 0;
+}
+#head_line {
+    text-align: center;
+    color: black;
+}
+

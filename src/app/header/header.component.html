@@ -6,17 +6,18 @@
             <img src="../../assets/images/left-arrow.png" alt="arrow">
         </div>
         <ol class="buttons">
-            <li id="home"><span>Home</span></li> 
-            <li id="about" (click)="setToBasicList()"><span>About</span></li>
+            <li id="home" routerLink="/"><span>Home</span></li> 
+            <li id="about" routerLink="about"><span>About</span></li>
             <li id="contact"><span>Contact</span></li>
         </ol>
         <ol class="communications">
             <li><img src="../../assets/images/facebook.png" alt=""></li>
             <li><img src="../../assets/images/instagram.png" alt=""></li>
-            <li><img src="../../assets/images/twitter.png" alt=""></li>       
+            <li (click)="setToBasicList()"><img src="../../assets/images/twitter.png" alt=""></li>       
         </ol>
     </div>      
 </div>
+<router-outlet></router-outlet>
 
 
 
@@ -31,19 +32,21 @@
         </div>
 
         <ol class="buttons"> 
-           <li (click)="setToBasicList()">About</li>
+           <li routerLink="about">About</li>
            <li>Contact</li>
-           <li>Home</li>
+           <li routerLink="/">Home</li>
        </ol>
+       
        <div id="logo">
            <img src="../../assets/images/512x512bb.jpg" alt="">
        </div>
+      
        <ol class="communications">
             <li><img src="../../assets/images/facebook.png" alt=""></li>
             <li><img src="../../assets/images/instagram.png" alt=""></li>
-            <li><img src="../../assets/images/twitter.png" alt=""></li>
-           
-       </ol>
-    </div>
+            <li (click)="setToBasicList()"><img src="../../assets/images/twitter.png" alt=""></li>   
+       </ol> 
+    </div>   
 </div>
 <div class="image_view"></div>
+<router-outlet></router-outlet>
