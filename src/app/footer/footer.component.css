@@ -4,23 +4,25 @@
     background: rgb(48, 47, 44);
     position: relative;
     justify-content: center;
-    /*bottom: 0;*/
-    /*margin-top: 0.5rem;*/
+    /*bottom: 0;
+    margin-top: 0.5rem;*/
 }
 .p_footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.footer p,
-.footer a {
+.footer p {
     color: white;
     font-family: 'Quicksand', sans-serif;
-    padding: 10px;
+    padding: 8px;
+    text-decoration: none;
 }
-.footer p:hover,
-.footer a:hover {
+.footer p:hover{
     color: navy;
+}
+#resume {
+    cursor: pointer;
 }
 
 @media(max-width : 54rem) {
@@ -36,8 +38,7 @@
         align-items: center;
     }
 
-    .footer p,
-    .footer a {
+    .footer p {
         margin: 0;
     }
     
